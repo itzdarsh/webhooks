@@ -26,7 +26,7 @@ def print_test():
     print(payload['p'])
     return ("", 200, None)
 
-@app.get('/')
+@app.route('/', methods=['GET'])
 def home():
     html =  '''
     <h1> Hello world </h1>
