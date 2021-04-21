@@ -27,4 +27,4 @@ def print_test():
     return ("", 200, None)
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True,host='192.168.1.11', port=8080)
+    app.run(debug=True, use_reloader=True, port=8080)
