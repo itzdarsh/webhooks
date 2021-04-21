@@ -26,5 +26,13 @@ def print_test():
     print(payload['p'])
     return ("", 200, None)
 
+@app.get('/')
+def home():
+    html =  '''
+    <h1> Hello world </h1>
+    <h4><a href='/covid'> click here </a> for Covid-19 Data</h4>
+    '''
+    return html
+
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True, port=8080)
