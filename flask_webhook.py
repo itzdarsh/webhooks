@@ -1,5 +1,5 @@
 from flask import Flask, request
-import json,urllib
+import json,urllib,sys
 import re
 
 
@@ -23,6 +23,9 @@ def print_test():
     to print that message in the server console.
     """
     payload = parse_request(request)
+    with open('filename.txt', 'w') as f:
+        sys.stdout = f
+        print(payload['p'])
     print(payload['p'])
     return ("", 200, None)
 
