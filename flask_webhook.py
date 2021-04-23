@@ -2,7 +2,7 @@ from flask import Flask, request
 import json,urllib,sys
 import re
 
-
+alert=[]
 app = Flask(__name__)
 
 def parse_request(req):
@@ -26,8 +26,9 @@ def print_test():
     with open('filename.txt', 'w') as f:
         sys.stdout = f
         print(payload['p'])
+        alert.push(payload['p'])
     print(payload['p'])
-    return ("", 200, None)
+    return (alert)
 
 @app.route('/', methods=['GET'])
 def home():
